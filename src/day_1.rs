@@ -1,7 +1,6 @@
 const INPUT: &str = include_str!("input/day_1.txt");
 
-fn part1() {
-
+pub fn part_1() -> String {
     let numbers: Vec<i32> = INPUT
         .split("\n")
         .map(|x| x.parse())
@@ -17,12 +16,10 @@ fn part1() {
         }
     }
 
-    println!("{}", increasing)
+    format!("{}", increasing)
 }
 
-
-fn part2() {
-
+pub fn part_2() -> String {
     let numbers: Vec<i32> = INPUT
         .split("\n")
         .map(|x| x.parse())
@@ -44,5 +41,5 @@ fn part2() {
         }
     }
 
-    println!("{}", increasing)
+    format!("{}", increasing)
 }

@@ -1,7 +1,7 @@
 const INPUT_STR: &str = include_str!("input/day_2.txt");
 
 
-pub fn part1() {
+pub fn part_1() -> String {
     let input = get_input();
 
     let mut length = 0;
@@ -16,11 +16,11 @@ pub fn part1() {
         }
     }
 
-    println!("{:?}", length * depth);
+    format!("{:?}", length * depth)
 }
 
 
-pub fn part2() {
+pub fn part_2() -> String {
     let input = get_input();
 
     let mut length = 0;
@@ -39,7 +39,7 @@ pub fn part2() {
         }
     }
 
-    println!("{:?}", length * depth);
+    format!("{:?}", length * depth)
 }
 
 
@@ -57,10 +57,4 @@ fn get_input() -> Vec<(String, i32)> {
         .filter(|x|x.is_some())
         .map(|x|x.unwrap())
         .collect::<Vec<_>>()
-}
-
-
-#[test]
-fn test() {
-    println!("{:?}", get_input());
 }
