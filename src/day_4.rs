@@ -77,7 +77,7 @@ pub fn part_1() -> String {
     }
 
     panic!("nobody won")
-}q
+}
 
 pub fn part_2() -> String {
     let (numbers, boards) = get_input();
