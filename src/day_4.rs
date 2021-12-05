@@ -16,22 +16,18 @@ pub fn part_1() -> String {
                     map.insert(*number, vec![]);
                 }
 
-                let mut matches = map.get_mut(&number).unwrap();
+                let matches = map.get_mut(&number).unwrap();
                 matches.push((i, j, k))
             }
         }
     }
 
     let marker = vec![
-        vec![false; 5],
-        vec![false; 5],
-        vec![false; 5],
-        vec![false; 5],
-        vec![false; 5],
+        vec![false; 5]; 5
     ];
 
     let mut bingo: Vec<_> = (0 .. boards.len())
-        .map(|x| marker.clone())
+        .map(|_| marker.clone())
         .collect();
 
     for number in numbers {
@@ -55,15 +51,11 @@ pub fn part_1() -> String {
                 }
 
                 if vertical || horizontal {
-                    let mut marked = 0;
                     let mut unmarked = 0;
 
-                    for board_i in (0 .. 5) {
-                        for board_j in (0 .. 5) {
-                            if bingo[*i][board_i][board_j] {
-                                marked += boards[*i][board_i][board_j] as i32;
-                            }
-                            else {
+                    for board_i in 0 .. 5 {
+                        for board_j in 0 .. 5 {
+                            if !bingo[*i][board_i][board_j] {
                                 unmarked += boards[*i][board_i][board_j] as i32;
                             }
                         }
@@ -72,7 +64,6 @@ pub fn part_1() -> String {
                 }
 
             }
-
         }
     }
 
@@ -92,22 +83,18 @@ pub fn part_2() -> String {
                     map.insert(*number, vec![]);
                 }
 
-                let mut matches = map.get_mut(&number).unwrap();
+                let matches = map.get_mut(&number).unwrap();
                 matches.push((i, j, k))
             }
         }
     }
 
     let marker = vec![
-        vec![false; 5],
-        vec![false; 5],
-        vec![false; 5],
-        vec![false; 5],
-        vec![false; 5],
+        vec![false; 5]; 5
     ];
 
     let mut bingo: Vec<_> = (0 .. boards.len())
-        .map(|x| marker.clone())
+        .map(|_| marker.clone())
         .collect();
 
     let mut final_score = 0;
@@ -135,14 +122,11 @@ pub fn part_2() -> String {
                     }
 
                     if vertical || horizontal {
-                        let mut marked = 0;
                         let mut unmarked = 0;
 
-                        for board_i in (0..5) {
-                            for board_j in (0..5) {
-                                if bingo[*i][board_i][board_j] {
-                                    marked += boards[*i][board_i][board_j] as i32;
-                                } else {
+                        for board_i in 0 .. 5 {
+                            for board_j in 0 .. 5 {
+                                if !bingo[*i][board_i][board_j] {
                                     unmarked += boards[*i][board_i][board_j] as i32;
                                 }
                             }
@@ -152,9 +136,9 @@ pub fn part_2() -> String {
                     }
                 }
             }
-
         }
     }
+
     format!("{}", final_score)
 }
 

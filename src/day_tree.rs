@@ -97,5 +97,5 @@ fn get_input() -> Vec<Vec<u8>> {
 
 #[test]
 fn test() {
-    println!("{}", part_2());
+    assert_eq!(part_2(), "2555739");
 }
