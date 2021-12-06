@@ -50,7 +50,7 @@ impl FishFarm {
             let mut successors = (days / 7) as u64;
             while remains >= 7 {
                 if self.cache.contains_key(&remains) {
-                    successors += self.cache.get(&remains).unwrap().clone();
+                    successors += self.cache.get(&remains).unwrap();
                 }
                 else {
                     let day_successors = self.count_successors(remains);
