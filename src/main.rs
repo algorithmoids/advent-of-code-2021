@@ -6,6 +6,7 @@ mod day_3;
 mod day_tree;
 mod day_4;
 mod day_5;
+mod day_6;
 
 
 fn main() {
@@ -20,6 +21,8 @@ fn main() {
     print_time("Day 4.2", day_4::part_2);
     print_time("Day 5.1", day_5::part_1);
     print_time("Day 5.2", day_5::part_2);
+    print_time("Day 6.1", day_6::part_1);
+    print_time("Day 6.2", day_6::part_2);
 }
 
 
