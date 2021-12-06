@@ -2,14 +2,6 @@ use std::collections::HashMap;
 
 const INPUT_STR: &str = include_str!("input/day_6.txt");
 
-#[derive(Debug)]
-struct Vent {
-    x1: i32,
-    y1: i32,
-    x2: i32,
-    y2: i32,
-}
-
 pub fn part_1() -> String {
     count_all(80)
 }
