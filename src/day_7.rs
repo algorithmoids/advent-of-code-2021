@@ -70,8 +70,33 @@ pub fn part_2() -> String {
     format!("{:?}", ups.iter().zip(downs).map(|(a, b)| a + b).min().unwrap())
 }
 
+pub fn _part_2_slow() -> String {
+    let crabs = get_input();
+
+    let start = *crabs.iter().min().unwrap();
+    let finish = *crabs.iter().max().unwrap();
+
+    let mut min_change = i32::MAX;
+
+    for level in start ..= finish {
+        let moves = crabs.iter()
+            .map(|crab| {let d = (*crab as i32 - level as i32).abs(); (d + 1) * d / 2})
+            .sum();
+
+        min_change = min_change.min(moves)
+    }
+
+    format!("{:?}", min_change)
+}
+
 fn get_input() -> Vec<u32> {
     INPUT_STR.split(',')
         .map(|x| x.parse().unwrap())
         .collect()
+}
+
+
+#[test]
+fn test() {
+    assert_eq!(_part_2_slow(), part_2())
 }
