@@ -15,7 +15,7 @@ mod day_11;
 mod day_12;
 mod day_13;
 mod day_14;
-
+mod day_15;
 
 fn main() {
     print_time("Day 1.1 ", day_1::part_1);
@@ -47,7 +47,8 @@ fn main() {
     print_time("Day 13.2\n", day_13::part_2);
     print_time("Day 14.1 ", day_14::part_1);
     print_time("Day 14.2 ", day_14::part_2);
-
+    print_time("Day 15.1 ", day_15::part_1);
+    print_time("Day 15.2 ", day_15::part_2);
 }
 
 
