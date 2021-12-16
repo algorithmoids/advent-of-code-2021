@@ -194,6 +194,6 @@ mod test {
 
     #[test]
     fn test_part_2() {
-        assert_eq!(part_2(), "20247770907")
+        assert_eq!(part_2(), "831996589851")
     }
 }
