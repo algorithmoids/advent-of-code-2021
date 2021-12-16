@@ -16,6 +16,7 @@ mod day_12;
 mod day_13;
 mod day_14;
 mod day_15;
+mod day_16;
 
 fn main() {
     print_time("Day 1.1 ", day_1::part_1);
